@@ -24,3 +24,11 @@ h2 {
 .charImage {
     border-radius: 50%
 }
+
+.male {
+    border: solid 5px #518CCA;
+}
+
+.female {
+    border: solid 5px pink;
+}
