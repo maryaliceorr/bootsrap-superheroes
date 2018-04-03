@@ -13,7 +13,11 @@ const superheroString = (superheroArray) => {
         superheroString +=      `<h4 class="panel-title">${superheroArray[i].name}</h4>`;
         superheroString +=   `</div>`;
         superheroString +=     `<div class="panel-body">`;
-        superheroString +=       `<img class="charImage" src="${superheroArray[i].image}">`;   
+        if(superheroArray[i].gender === "Male") {
+            superheroString +=       `<img class="charImage male" src="${superheroArray[i].image}">`; 
+        } else {
+            superheroString +=       `<img class="charImage female" src="${superheroArray[i].image}">`;
+        }
         superheroString +=       `<p class="charDescription">${superheroArray[i].description}</p>`;
         superheroString +=      `</div>`;
         superheroString +=  `</div>`;
@@ -21,6 +25,7 @@ const superheroString = (superheroArray) => {
     }
     writeToDom(superheroString, "superhero-holder");
 };
+
 
 function xhrCall (){
     const data = JSON.parse(this.responseText);
